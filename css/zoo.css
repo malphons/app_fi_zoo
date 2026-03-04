@@ -1,0 +1,222 @@
+/* ── Fixed Income Model Zoo — Base Theme ─────────────────── */
+
+/* ── Dark theme (default) ── */
+:root,
+[data-theme="dark"] {
+  --bg-primary:       #0d1117;
+  --bg-secondary:     #161b22;
+  --bg-card:          #1c2128;
+  --bg-card-hover:    #22272e;
+  --bg-input:         #161b22;
+  --text-primary:     #e6edf3;
+  --text-secondary:   #8b949e;
+  --text-muted:       #656d76;
+  --text-link:        #58a6ff;
+  --border-default:   #30363d;
+  --border-muted:     #21262d;
+  --shadow-sm:        0 1px 2px rgba(0,0,0,.4);
+  --shadow-md:        0 3px 8px rgba(0,0,0,.5);
+  --shadow-lg:        0 8px 24px rgba(0,0,0,.6);
+
+  /* Family colors */
+  --family-yield-curve:   #58a6ff;
+  --family-rate-dynamics: #f0883e;
+  --family-forward-rates: #a371f7;
+  --family-volatility:    #f85149;
+  --family-credit-risk:   #3fb950;
+  --family-mortgage:      #d2a8ff;
+  --family-inflation:     #e3b341;
+
+  /* Subcategory colors */
+  --sub-yc-construction: #58a6ff;
+  --sub-yc-parametric:   #79c0ff;
+  --sub-rd-equilibrium:  #f0883e;
+  --sub-rd-calibrated:   #d29922;
+  --sub-fr-general:      #a371f7;
+  --sub-fr-market:       #bc8cff;
+  --sub-vol-lognormal:   #f85149;
+  --sub-vol-stochastic:  #ff7b72;
+  --sub-cr-structural:   #3fb950;
+  --sub-cr-reduced:      #56d364;
+  --sub-mtg-prepayment:  #d2a8ff;
+  --sub-mtg-spread:      #e2cbff;
+  --sub-inf-nominal:     #e3b341;
+  --sub-inf-market:      #f0d060;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --transition: .2s ease;
+  --max-width: 1400px;
+}
+
+/* ── Light theme ── */
+[data-theme="light"] {
+  --bg-primary:       #ffffff;
+  --bg-secondary:     #f6f8fa;
+  --bg-card:          #ffffff;
+  --bg-card-hover:    #f6f8fa;
+  --bg-input:         #f6f8fa;
+  --text-primary:     #1f2328;
+  --text-secondary:   #656d76;
+  --text-muted:       #8b949e;
+  --text-link:        #0969da;
+  --border-default:   #d0d7de;
+  --border-muted:     #e8e8e8;
+  --shadow-sm:        0 1px 2px rgba(0,0,0,.06);
+  --shadow-md:        0 3px 8px rgba(0,0,0,.1);
+  --shadow-lg:        0 8px 24px rgba(0,0,0,.15);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--text-link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.zoo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border-muted);
+}
+
+.zoo-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.zoo-logo {
+  width: 36px;
+  height: 36px;
+}
+
+.zoo-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.zoo-subtitle {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 400;
+  display: block;
+}
+
+.zoo-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.zoo-header-actions a {
+  color: var(--text-secondary);
+  transition: color var(--transition);
+}
+.zoo-header-actions a:hover { color: var(--text-primary); }
+
+/* ── Theme Toggle ── */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  padding: 6px 8px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+}
+.theme-toggle:hover {
+  color: var(--text-primary);
+  border-color: var(--text-muted);
+}
+.theme-toggle svg { width: 16px; height: 16px; fill: currentColor; }
+
+/* ── Hero ── */
+.zoo-hero {
+  text-align: center;
+  max-width: 720px;
+  margin: 48px auto 32px;
+  padding: 0 24px;
+}
+
+.zoo-hero h1 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, var(--family-yield-curve), var(--family-volatility), var(--family-inflation));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.zoo-hero p {
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ── Section Headers (grouped view) ── */
+.family-header {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 40px 0 8px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--border-muted);
+}
+
+.subcategory-header {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin: 24px 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.subcategory-header .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.subcategory-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* ── Footer ── */
+.zoo-footer {
+  text-align: center;
+  padding: 40px 24px;
+  color: var(--text-muted);
+  font-size: 13px;
+  border-top: 1px solid var(--border-muted);
+  margin-top: 60px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .zoo-header { padding: 12px 16px; }
+  .zoo-hero { margin: 32px auto 24px; }
+  .zoo-hero h1 { font-size: 24px; }
+  .zoo-hero p { font-size: 14px; }
+}

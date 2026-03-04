@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none">
+  <!-- Yield curve shape -->
+  <path d="M4 28 Q10 26 14 20 Q18 14 24 10 Q28 8 32 7" stroke="#58a6ff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Rate dots -->
+  <circle cx="8" cy="25" r="2.5" fill="#f0883e"/>
+  <circle cx="16" cy="18" r="2.5" fill="#a371f7"/>
+  <circle cx="24" cy="10" r="2.5" fill="#f85149"/>
+  <circle cx="30" cy="7" r="2.5" fill="#3fb950"/>
+  <!-- Grid lines -->
+  <line x1="4" y1="30" x2="32" y2="30" stroke="#30363d" stroke-width="0.5"/>
+  <line x1="4" y1="4" x2="4" y2="30" stroke="#30363d" stroke-width="0.5"/>
+</svg>

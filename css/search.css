@@ -1,0 +1,202 @@
+/* ── Fixed Income Model Zoo — Search & Filters ─────────── */
+
+.zoo-search {
+  max-width: var(--max-width);
+  margin: 0 auto 24px;
+  padding: 0 24px;
+}
+
+/* ── Family Filter Pills ── */
+.family-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.family-pill {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--border-default);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.family-pill:hover {
+  border-color: var(--text-muted);
+  color: var(--text-primary);
+}
+
+.family-pill.active {
+  background: var(--family-yield-curve);
+  color: #fff;
+  border-color: var(--family-yield-curve);
+}
+
+/* Dynamic active colors per family */
+.family-pill.active[data-family="yield-curve"]   { background: var(--family-yield-curve);   border-color: var(--family-yield-curve); }
+.family-pill.active[data-family="rate-dynamics"] { background: var(--family-rate-dynamics); border-color: var(--family-rate-dynamics); }
+.family-pill.active[data-family="forward-rates"] { background: var(--family-forward-rates); border-color: var(--family-forward-rates); }
+.family-pill.active[data-family="volatility"]    { background: var(--family-volatility);    border-color: var(--family-volatility); }
+.family-pill.active[data-family="credit-risk"]   { background: var(--family-credit-risk);   border-color: var(--family-credit-risk); }
+.family-pill.active[data-family="mortgage"]      { background: var(--family-mortgage);      border-color: var(--family-mortgage); }
+.family-pill.active[data-family="inflation"]     { background: var(--family-inflation);     border-color: var(--family-inflation); }
+
+/* ── Search Input ── */
+.search-wrap {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+.search-icon svg { width: 16px; height: 16px; fill: currentColor; }
+
+.search-input {
+  width: 100%;
+  padding: 10px 14px 10px 40px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 14px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.search-input::placeholder { color: var(--text-muted); }
+.search-input:focus {
+  outline: none;
+  border-color: var(--family-yield-curve);
+  box-shadow: 0 0 0 3px rgba(88,166,255,.15);
+}
+
+/* ── Subcategory Pills ── */
+.subcategory-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+  min-height: 28px;
+}
+
+.subcat-pill {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border-default);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.subcat-pill:hover {
+  border-color: var(--text-muted);
+  color: var(--text-secondary);
+}
+
+.subcat-pill.active {
+  border-color: currentColor;
+  color: var(--text-primary);
+  background: rgba(255,255,255,.06);
+}
+
+/* ── Results Bar ── */
+.results-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.results-count {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.results-count strong {
+  color: var(--text-primary);
+}
+
+.results-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── View Toggle ── */
+.view-toggle {
+  display: flex;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.view-btn {
+  background: transparent;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+}
+.view-btn:hover { color: var(--text-primary); }
+.view-btn.active {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+.view-btn svg { width: 16px; height: 16px; fill: currentColor; }
+
+/* ── Sort Dropdown ── */
+.sort-select {
+  background: var(--bg-input);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  cursor: pointer;
+}
+.sort-select:focus { outline: none; border-color: var(--family-yield-curve); }
+
+/* ── No Results ── */
+.no-results {
+  text-align: center;
+  padding: 80px 24px;
+  color: var(--text-muted);
+  grid-column: 1 / -1;
+}
+
+.no-results .icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+  opacity: 0.4;
+}
+
+.no-results p {
+  font-size: 15px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .zoo-search { padding: 0 16px; }
+  .family-pills { gap: 6px; }
+  .family-pill { font-size: 12px; padding: 5px 12px; }
+  .results-bar { flex-direction: column; align-items: flex-start; }
+}

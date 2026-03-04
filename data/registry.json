@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0",
+  "base_url_pattern": "https://{github_user}.github.io/{repo_name}",
+  "github_user": "malphons",
+  "spokes": [
+    {
+      "id": "yc-construction",
+      "repo_name": "fi-zoo-yield-curve",
+      "family": "yield-curve",
+      "subcategory": "construction",
+      "label": "Curve Construction",
+      "enabled": true
+    },
+    {
+      "id": "yc-parametric",
+      "repo_name": "fi-zoo-yield-curve",
+      "family": "yield-curve",
+      "subcategory": "parametric",
+      "label": "Parametric Models",
+      "enabled": true
+    },
+    {
+      "id": "rd-equilibrium",
+      "repo_name": "fi-zoo-rate-dynamics",
+      "family": "rate-dynamics",
+      "subcategory": "equilibrium",
+      "label": "Equilibrium Models",
+      "enabled": true
+    },
+    {
+      "id": "rd-calibrated",
+      "repo_name": "fi-zoo-rate-dynamics",
+      "family": "rate-dynamics",
+      "subcategory": "calibrated",
+      "label": "No-Arb / Calibrated",
+      "enabled": true
+    },
+    {
+      "id": "fr-general",
+      "repo_name": "fi-zoo-forward-rates",
+      "family": "forward-rates",
+      "subcategory": "general",
+      "label": "General Framework",
+      "enabled": true
+    },
+    {
+      "id": "fr-market",
+      "repo_name": "fi-zoo-forward-rates",
+      "family": "forward-rates",
+      "subcategory": "market",
+      "label": "Market Models",
+      "enabled": true
+    },
+    {
+      "id": "vol-lognormal",
+      "repo_name": "fi-zoo-volatility",
+      "family": "volatility",
+      "subcategory": "lognormal",
+      "label": "Log-Normal Models",
+      "enabled": true
+    },
+    {
+      "id": "vol-stochastic",
+      "repo_name": "fi-zoo-volatility",
+      "family": "volatility",
+      "subcategory": "stochastic",
+      "label": "Stochastic Vol",
+      "enabled": true
+    },
+    {
+      "id": "cr-structural",
+      "repo_name": "fi-zoo-credit",
+      "family": "credit-risk",
+      "subcategory": "structural",
+      "label": "Structural Models",
+      "enabled": true
+    },
+    {
+      "id": "cr-reduced",
+      "repo_name": "fi-zoo-credit",
+      "family": "credit-risk",
+      "subcategory": "reduced",
+      "label": "Reduced Form",
+      "enabled": true
+    },
+    {
+      "id": "mtg-prepay",
+      "repo_name": "fi-zoo-mortgage",
+      "family": "mortgage",
+      "subcategory": "prepayment",
+      "label": "Prepayment Models",
+      "enabled": true
+    },
+    {
+      "id": "mtg-spread",
+      "repo_name": "fi-zoo-mortgage",
+      "family": "mortgage",
+      "subcategory": "spread",
+      "label": "Spread Analysis",
+      "enabled": true
+    },
+    {
+      "id": "inf-nominal",
+      "repo_name": "fi-zoo-inflation",
+      "family": "inflation",
+      "subcategory": "nominal",
+      "label": "Nominal-Real Link",
+      "enabled": true
+    },
+    {
+      "id": "inf-market",
+      "repo_name": "fi-zoo-inflation",
+      "family": "inflation",
+      "subcategory": "market",
+      "label": "Market-Implied",
+      "enabled": true
+    }
+  ]
+}
